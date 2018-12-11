@@ -1,7 +1,17 @@
+spring:
+  application:
+    name: eureka
+
 server:
   port: ${PORT:8761}
 
 eureka:
+    instance:
+      preferIpAddress: true
+    enableSelfPreservation: false
     client:
+      region: sa-east-1
+      availabilityZones:
+        sa-east-1: sa-east-1a,sa-east-1c
       register-with-eureka: false
       fetch-registry: false
